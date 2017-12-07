@@ -1,6 +1,7 @@
 package com.zhe.user.constant;
 
-import com.zhe.user.State.SysState;
+
+import com.zhe.exception.ErrorInterface;
 
 /**
  * @Author:zhe.yang
@@ -9,7 +10,7 @@ import com.zhe.user.State.SysState;
  */
 
 public class UserConstant {
-    public static enum Status implements SysState {
+    public static enum Status implements ErrorInterface {
         SUCCESS("000000", "成功"),
         FAILURE("666666","失败"),
         ERROR("999999", "系统异常");
