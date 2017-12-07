@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--
+    1.修改javaModelGenerator,sqlMapGenerator,javaClientGenerator节点的targetPackage属性以及table节点的tableName属性
+    2.命令行进入对应的项目持久层模块目录下，比如lincomb-order-persistence目录下
+    3.执行 mvn mybatis-generator:generate -f mybatis.xml
+    -->
+      <classPathEntry	location="D:\mysql\mysql-connector-java-5.1.29.jar" />
+	<context id="MysqlTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />	
+		</commentGenerator>
+          <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://172.16.103.201:3306/lbg_cooperation"
+                        userId="root"
+                        password="!QAZxsw2">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+      <javaModelGenerator targetPackage="com.lincomb.lbg.cooperation.persistence.models" targetProject="./src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        	
+        <sqlMapGenerator targetPackage="mapper" targetProject="./src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+       
+        <javaClientGenerator targetPackage="com.lincomb.lbg.cooperation.persistence" type="XMLMAPPER" targetProject="./src/main/java">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+
+       <!-- <table schema="lbg_cooperation" tableName="t_brands">
+            <property name="useActualColumnNames" value="false"/>
+           	<property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_contact">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_contact_record">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_cooperation">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_cooperation_label">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_cooperation_relation">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_demand">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_demand_label">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_industry_label">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_resources_label">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>-->
+       <!-- <table schema="lbg_cooperation" tableName="t_banner">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_cooperation_introduce">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_cooperation_report">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>-->
+
+        <table schema="lbg_cooperation" tableName="pre_fenlei_info_7ree">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="pre_ucenter_members">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <!--<table schema="lbg_cooperation" tableName="t_city">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="lbg_cooperation" tableName="t_provinces">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>-->
+
+    </context>
+
+</generatorConfiguration>
