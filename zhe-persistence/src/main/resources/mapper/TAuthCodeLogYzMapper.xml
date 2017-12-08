@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhe.user.persistence.TAuthCodeLogYzMapper" >
+  <resultMap id="BaseResultMap" type="com.zhe.user.persistence.models.TAuthCodeLogYz" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="send_no" property="sendNo" jdbcType="VARCHAR" />
+    <result column="auth_code" property="authCode" jdbcType="VARCHAR" />
+    <result column="send_type" property="sendType" jdbcType="INTEGER" />
+    <result column="send_status" property="sendStatus" jdbcType="INTEGER" />
+    <result column="source_code" property="sourceCode" jdbcType="VARCHAR" />
+    <result column="send_time" property="sendTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, user_id, send_no, auth_code, send_type, send_status, source_code, send_time
+  </sql>
+
+  <insert id="insert">
+    insert into t_auth_code_log_yz (user_id, send_no,
+      auth_code, send_type, send_status, 
+      source_code, send_time)
+    values (#{userId,jdbcType=INTEGER}, #{sendNo,jdbcType=VARCHAR},
+      #{authCode,jdbcType=VARCHAR}, #{sendType,jdbcType=INTEGER}, #{sendStatus,jdbcType=INTEGER}, 
+      #{sourceCode,jdbcType=VARCHAR}, #{sendTime,jdbcType=TIMESTAMP})
+  </insert>
+
+
+  <select id="select" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>from t_auth_code_log_yz
+    <include refid="paramWhere"/>
+    ORDER BY send_time DESC limit #{start}, #{end}
+  </select>
+
+  <!-- 按照条件查询个数-->
+  <select id="findTotal" resultType="int">
+    SELECT COUNT(1) FROM t_auth_code_log_yz
+    <include refid="paramWhere"/>
+  </select>
+  <delete id="delete">
+    DELETE FROM t_auth_code_log_yz
+    <include refid="paramWhere"/>
+  </delete>
+  <!--修改联系信息获取记录信息-->
+  <update id="update">
+    UPDATE t_auth_code_log_yz
+    <set>
+      <if test="param != null">
+        <if test="param.userId != null">AND user_id = #{param.userId},</if>
+        <if test="param.sendNo != null">AND send_no = #{param.sendNo},</if>
+        <if test="param.authCode != null">AND auth_code = #{param.authCode},</if>
+        <if test="param.sendType != null">AND send_type = #{param.sendType},</if>
+        <if test="param.sendStatus != null">AND send_status = #{param.sendStatus},</if>
+        <if test="param.sourceCode != null">AND source_code = #{param.sourceCode},</if>
+        <if test="param.sendTime != null">AND send_time = #{param.sendTime}</if>
+
+      </if>
+    </set>
+    <where>
+      <if test="param.id != null">and id = #{param.id}</if>
+    </where>
+  </update>
+
+  <sql id="paramWhere">
+    <where>
+      <if test="param != null">
+        <if test="param.id != null">AND id = #{param.id}</if>
+        <if test="param.userId != null">AND user_id = #{param.userId}</if>
+        <if test="param.sendNo != null">AND send_no = #{param.sendNo}</if>
+        <if test="param.authCode != null">AND auth_code = #{param.authCode}</if>
+        <if test="param.sendType != null">AND send_type = #{param.sendType}</if>
+        <if test="param.sendStatus != null">AND send_status = #{param.sendStatus}</if>
+        <if test="param.sourceCode != null">AND source_code = #{param.sourceCode}</if>
+        <if test="param.sendTime != null">AND send_time = #{param.sendTime}</if>
+
+      </if>
+    </where>
+  </sql>
+</mapper>

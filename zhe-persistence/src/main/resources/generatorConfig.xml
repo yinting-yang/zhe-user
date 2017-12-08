@@ -13,15 +13,15 @@
 			<property name="suppressAllComments" value="true" />	
 		</commentGenerator>
           <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://172.16.103.201:3306/lbg_cooperation"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/zhe_user"
                         userId="root"
-                        password="!QAZxsw2">
+                        password="123456">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-      <javaModelGenerator targetPackage="com.lincomb.lbg.cooperation.persistence.models" targetProject="./src/main/java">
+      <javaModelGenerator targetPackage="com.zhe.user.persistence.models" targetProject="./src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -30,80 +30,34 @@
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
        
-        <javaClientGenerator targetPackage="com.lincomb.lbg.cooperation.persistence" type="XMLMAPPER" targetProject="./src/main/java">
+        <javaClientGenerator targetPackage="com.zhe.user.persistence" type="XMLMAPPER" targetProject="./src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
 
-       <!-- <table schema="lbg_cooperation" tableName="t_brands">
-            <property name="useActualColumnNames" value="false"/>
-           	<property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_contact">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_contact_record">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_cooperation">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_cooperation_label">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_cooperation_relation">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_demand">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_demand_label">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_industry_label">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_resources_label">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>-->
-       <!-- <table schema="lbg_cooperation" tableName="t_banner">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_cooperation_introduce">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>
-        <table schema="lbg_cooperation" tableName="t_cooperation_report">
-            <property name="useActualColumnNames" value="false"/>
-            <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>-->
 
-        <table schema="lbg_cooperation" tableName="pre_fenlei_info_7ree">
+
+        <table schema="lbg_cooperation" tableName="t_auth_code_log_yz">
             <property name="useActualColumnNames" value="false"/>
             <property name="ignoreQualifiersAtRuntime" value="true"/>
         </table>
-        <table schema="lbg_cooperation" tableName="pre_ucenter_members">
+        <table schema="lbg_cooperation" tableName="t_sms_temp_yz">
             <property name="useActualColumnNames" value="false"/>
             <property name="ignoreQualifiersAtRuntime" value="true"/>
         </table>
-        <!--<table schema="lbg_cooperation" tableName="t_city">
+        <table schema="lbg_cooperation" tableName="t_user_info_yz">
             <property name="useActualColumnNames" value="false"/>
             <property name="ignoreQualifiersAtRuntime" value="true"/>
         </table>
-        <table schema="lbg_cooperation" tableName="t_provinces">
+        <table schema="lbg_cooperation" tableName="t_user_log_yz">
             <property name="useActualColumnNames" value="false"/>
             <property name="ignoreQualifiersAtRuntime" value="true"/>
-        </table>-->
+        </table>
+        <table schema="lbg_cooperation" tableName="t_user_password_yz">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+
 
     </context>
 

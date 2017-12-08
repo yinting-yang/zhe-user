@@ -17,9 +17,13 @@
 
     <!-- 声明需要暴露的服务接口 -->
     <!--服务商-start-->
-    <!--<dubbo:service interface="com.lincomb.lbg.cooperation.service.IFacilitatorService" ref="facilitatorService" timeout="10000" />
-    <dubbo:service interface="com.lincomb.lbg.cooperation.service.IFacilitatorDemandService" ref="facilitatorDemandService" timeout="10000" />-->
-    <!--服务商-end-->
+    <dubbo:service interface="com.zhe.user.service.IAuthCodeLogYzService" ref="iAuthCodeLogYzService" timeout="10000"/>
+    <dubbo:service interface="com.zhe.user.service.ISmsTempYzService" ref="iSmsTempYzService" timeout="10000"/>
+    <dubbo:service interface="com.zhe.user.service.IUserInfoYzService" ref="iUserInfoYzService" timeout="10000"/>
+    <dubbo:service interface="com.zhe.user.service.IUserLogYzService" ref="iUserLogYzService" timeout="10000"/>
+    <dubbo:service interface="com.zhe.user.service.IUserPasswordYzService" ref="iUserPasswordYzService"
+                   timeout="10000"/>
+
 
 
 </beans>
