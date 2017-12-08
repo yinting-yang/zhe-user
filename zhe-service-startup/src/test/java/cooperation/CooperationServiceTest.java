@@ -21,9 +21,9 @@ import java.util.List;
 public class CooperationServiceTest {
 
 
-
+    @Qualifier("iAuthCodeLogYzService")
     @Autowired
-    private IAuthCodeLogYzService iAuthCodeLogYzService;
+    private IBaseUserService iBaseUserService ;
 
 
     /**
@@ -41,7 +41,7 @@ public class CooperationServiceTest {
         re.setPage(1);
         re.setPageSize(Integer.MAX_VALUE);
 
-        ResModel<List<TAuthCodeLogYzInfo>> resModel = this.iAuthCodeLogYzService.find(re);
+        ResModel<List<TAuthCodeLogYzInfo>> resModel = this.iBaseUserService.find(re);
         List<TAuthCodeLogYzInfo> data = resModel.getData();
 
 
