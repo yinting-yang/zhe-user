@@ -33,18 +33,13 @@ public class CooperationServiceTest {
      */
     @Test
     public void countUserByBuyTimesTest() throws Exception {
-
-
         TAuthCodeLogYzInfo tAuthCodeLogYzInfo = new TAuthCodeLogYzInfo();
         ReqModel<TAuthCodeLogYzInfo> re = new ReqModel<>();
         re.setParam(tAuthCodeLogYzInfo);
         re.setPage(1);
         re.setPageSize(Integer.MAX_VALUE);
-
         ResModel<List<TAuthCodeLogYzInfo>> resModel = this.iBaseUserService.find(re);
         List<TAuthCodeLogYzInfo> data = resModel.getData();
-
-
     }
     
 
